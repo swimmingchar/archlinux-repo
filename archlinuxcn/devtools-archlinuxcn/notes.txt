@@ -1,0 +1,4 @@
+* -q should be the first flag to disable curlrc
+  https://gitlab.archlinux.org/archlinux/devtools/-/commit/a23dcb039116670d3ec3203a278c852c3791ddef
+* How $BUILDTOOL is determined? Hard-coded https://gitlab.archlinux.org/archlinux/devtools/-/blob/20220207/lib/common.sh#L19
+* Collect upstream devtools changes (LTO, security flags, ...)

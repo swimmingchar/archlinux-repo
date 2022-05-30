@@ -20,11 +20,11 @@ index 275cff7..b6c9cb1 100644
 --- a/arch-nspawn.in
 +++ b/arch-nspawn.in
 @@ -50,7 +50,7 @@ shift 1
- pacconf_cmd=$(command -v pacman-conf || command -v pacconf)
+ [[ -z $working_dir ]] && die 'Please specify a working directory.'
  
  if (( ${#cache_dirs[@]} == 0 )); then
--	mapfile -t cache_dirs < <($pacconf_cmd --config "${pac_conf:-$working_dir/etc/pacman.conf}" CacheDir)
-+	mapfile -t cache_dirs < <($pacconf_cmd CacheDir)
+-	mapfile -t cache_dirs < <(pacman-conf --config "${pac_conf:-$working_dir/etc/pacman.conf}" CacheDir)
++	mapfile -t cache_dirs < <(pacman-conf CacheDir)
  fi
  
  # shellcheck disable=2016
